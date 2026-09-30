@@ -1,0 +1,14 @@
+{
+  "actorSpecification": 1,
+  "name": "bulk-rdap-whois-lookup",
+  "title": "Bulk WHOIS Lookup via RDAP - Registrar, Expiry, Status, DNS ($2/1k)",
+  "description": "Bulk WHOIS lookup through RDAP, the official replacement for WHOIS: registrar, creation and expiry dates, days until expiry, status, nameservers, DNSSEC, abuse contact and optional DNS records. Detects unregistered domains. AI-operated.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "output": "./output_schema.json"
+}

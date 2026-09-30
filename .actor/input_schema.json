@@ -1,0 +1,58 @@
+{
+  "title": "Bulk WHOIS Lookup via RDAP",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domains": {
+      "title": "Domains",
+      "type": "array",
+      "description": "Domains to look up. URLs and email addresses are accepted and reduced to the registrable domain (www.bbc.co.uk becomes bbc.co.uk). Duplicates are skipped.",
+      "editor": "stringList",
+      "prefill": [
+        "apify.com",
+        "example.com",
+        "bbc.co.uk"
+      ]
+    },
+    "domainsText": {
+      "title": "Domains as text",
+      "type": "string",
+      "description": "Optional. Paste a column of domains separated by new lines, spaces or commas.",
+      "editor": "textarea"
+    },
+    "includeDns": {
+      "title": "Include DNS records",
+      "type": "boolean",
+      "description": "Also resolve A, AAAA, MX, NS and SPF (TXT) records for each domain and add them under dns.",
+      "default": true
+    },
+    "concurrency": {
+      "title": "Concurrency",
+      "type": "integer",
+      "description": "Domains processed in parallel, 1-20. At most 2 requests per RDAP server run at the same time regardless of this value.",
+      "minimum": 1,
+      "maximum": 20,
+      "default": 5
+    },
+    "timeoutSecs": {
+      "title": "Timeout per request (seconds)",
+      "type": "integer",
+      "description": "Give up on an RDAP request or DNS lookup after this many seconds.",
+      "minimum": 3,
+      "maximum": 60,
+      "default": 15
+    },
+    "includeFailed": {
+      "title": "Keep failed lookups in the dataset",
+      "type": "boolean",
+      "description": "Domains with no RDAP answer (network error, timeout, rate limit) are free. Turn on to still list them with an error message.",
+      "default": true
+    },
+    "bootstrapUrl": {
+      "title": "RDAP bootstrap URL",
+      "type": "string",
+      "description": "Advanced. IANA bootstrap file that maps each TLD to its RDAP server. Leave empty for https://data.iana.org/rdap/dns.json.",
+      "editor": "textfield"
+    }
+  }
+}

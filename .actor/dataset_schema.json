@@ -1,0 +1,218 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "domain": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Registrable domain"
+      },
+      "input": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Original input"
+      },
+      "tld": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Top-level domain"
+      },
+      "rdapServer": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "RDAP server base URL used"
+      },
+      "registered": {
+        "type": [
+          "boolean",
+          "null"
+        ],
+        "description": "false when RDAP answered 404 (likely available)"
+      },
+      "registrar": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Registrar name"
+      },
+      "registrarIanaId": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Registrar IANA ID"
+      },
+      "registrarUrl": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Registrar website"
+      },
+      "abuseEmail": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Registrar abuse contact email"
+      },
+      "creationDate": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Registration date (ISO)"
+      },
+      "expirationDate": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Expiry date (ISO)"
+      },
+      "lastChangedDate": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Last changed date (ISO)"
+      },
+      "daysUntilExpiry": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Days until expiry (negative when past)"
+      },
+      "domainAgeDays": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Days since registration"
+      },
+      "statuses": {
+        "type": "array",
+        "description": "EPP status codes",
+        "items": {
+          "type": "string"
+        }
+      },
+      "nameservers": {
+        "type": "array",
+        "description": "Nameservers",
+        "items": {
+          "type": "string"
+        }
+      },
+      "dnssec": {
+        "type": [
+          "boolean",
+          "null"
+        ],
+        "description": "DNSSEC delegation signed"
+      },
+      "registrantOrg": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Registrant organisation if public"
+      },
+      "registrantCountry": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Registrant country if public"
+      },
+      "dns": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "description": "A, AAAA, MX, NS, SPF records"
+      },
+      "error": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Error when no RDAP answer was received"
+      },
+      "rdapUrl": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "RDAP URL queried"
+      }
+    },
+    "additionalProperties": true
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "domain",
+          "registered",
+          "registrar",
+          "expirationDate",
+          "daysUntilExpiry",
+          "creationDate",
+          "statuses",
+          "nameservers",
+          "dnssec",
+          "error"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "domain": {
+            "label": "domain"
+          },
+          "registered": {
+            "label": "registered"
+          },
+          "registrar": {
+            "label": "registrar"
+          },
+          "expirationDate": {
+            "label": "expirationDate"
+          },
+          "daysUntilExpiry": {
+            "label": "daysUntilExpiry"
+          },
+          "creationDate": {
+            "label": "creationDate"
+          },
+          "statuses": {
+            "label": "statuses"
+          },
+          "nameservers": {
+            "label": "nameservers"
+          },
+          "dnssec": {
+            "label": "dnssec"
+          },
+          "error": {
+            "label": "error"
+          }
+        }
+      }
+    }
+  }
+}

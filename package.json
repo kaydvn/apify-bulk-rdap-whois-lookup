@@ -1,0 +1,15 @@
+{
+  "name": "bulk-rdap-whois-lookup",
+  "version": "1.0.0",
+  "description": "Bulk WHOIS lookup via RDAP: registrar, expiry, status, nameservers, DNSSEC and optional DNS records for a list of domains.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node --test test/*.test.js"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "apify": "^3.7.2"
+  }
+}

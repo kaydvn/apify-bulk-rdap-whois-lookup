@@ -1,0 +1,16 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Results",
+  "properties": {
+    "overview": {
+      "type": "string",
+      "title": "Results (overview)",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+    },
+    "results": {
+      "type": "string",
+      "title": "All result data",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}
