@@ -48,7 +48,7 @@ Availability check (`registered: false` means RDAP answered "not found"):
 
 ## Pricing
 
-Pay per event: **$2.00 per 1,000 domains** ($0.002 per domain). You are charged only for domains that get an RDAP answer, including "not found" (unregistered). Network errors, timeouts and rate-limit failures are free.
+Pay per event: the `domain` event costs **$0.002 per domain** (that is **$2.00 per 1,000 domains**). You are charged only for domains that get an RDAP answer, including "not found" (unregistered). Network errors, timeouts and rate-limit failures are free.
 
 | Domains | Approx. cost |
 |---|---|
